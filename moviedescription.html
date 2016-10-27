@@ -1,0 +1,83 @@
+<div>
+    <header></header>
+
+    <div class="col-sm-8 col-md-8" id="container">
+
+        <div>
+
+            <h2>{{showMovie.name}}</h2>
+            <div class="media-left media-top"><img ng-src="{{showMovie.image.medium}}">
+
+                <div><strong>ID:</strong>{{showMovie.id}}</div>
+                <div><strong>Language:</strong> {{showMovie.language}}
+                </div>
+                <div><strong>Network:</strong> {{showMovie.network.name}}</div>
+                <div><strong>Premiered:</strong> {{showMovie.premiered}}</div>
+                <div><strong>Genres:</strong>
+                    <span ng-repeat="genre in showMovie.data.genres"> {{genre}}</span>
+                </div>
+                <div><strong>Status: </strong>{{showMovie.status}}</div>
+                <div><strong>Rating:</strong> {{showMovie.rating.average}}</div>
+            </div>
+
+            <div class="media-right media-top">
+                <ul class="nav nav-pills">
+                    <li ng-class="{ active: isSet(1) }">
+                        <a ng-click="setTab(1)">Description</a>
+                    </li>
+                    <li ng-class="{ active: Set(2) }">
+                        <a ng-click="setTab(2)">Episodes</a>
+                    </li>
+                    <li ng-class="{ active: isSet(3) }">
+                        <a ng-click="setTab(3)">Seasons</a>
+                    </li>
+                    <li ng-class="{ active: isSet(4) }">
+                        <a ng-click="setTab(4)">Schedule</a>
+                    </li>
+                    <li ng-class="{ active: isSet(5) }">
+                        <a ng-click="setTab(5)">Cast</a>
+                    </li>
+                </ul>
+
+                <div ng-show="isSet(1)">
+                    <h4>Description</h4>
+                    <span ng-bind-html="sanitizeHtml(showMovie.summary)">
+                    </span>
+                </div>
+
+                <div ng-show="isSet(2)">
+                    <h4>Episodes</h4>
+                    <ul>
+                        <li ng-repeat="episodes in showEpisode"><a href="#">{{episodes.url}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div ng-show="isSet(3)">
+                    <h4>Seasons</h4>
+                    <ul>
+                        <li ng-repeat="seasons in showSeason"><a href="#">{{seasons.url}}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div ng-show="isSet(4)">
+                    <h4>Schedule Time:</h4>
+                    <span>{{time}}</span>
+                    <h4>Schedule Days: </h4>
+                    <span ng-repeat="day in days"> {{day}}</span>
+                </div>
+
+                <div ng-show="isSet(5)">
+                    <h4>Cast</h4>
+                    <ul>
+                        <li ng-repeat="cast in showCast">{{cast.person.name}} <b>as</b> {{cast.character.name}}
+                            <img ng-src="{{cast.person.image.medium}}">
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
