@@ -1,27 +1,27 @@
 <nav class="navbar navbar-inverse" >
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="font-size: 30px; font-family: italic">Movie Bazar</a>
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Shows" name="search" value="search" ng-model="moviename" required/>
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit" ng-click="searchmovie(moviename)">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="#">Login</a>
-            </li>
-            <li>
-                <a href="#">Create an Account</a>
-            </li>
-        </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" style="font-size: 30px; font-family: italic">Movie Bazar</a>
     </div>
+    <div class="col-sm-4 col-md-4">
+      <form class="navbar-form" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search Shows" name="search" value="search" ng-model="moviename" required />
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit" ng-click="searchmovie(moviename)" ng-disabled="loading">
+              <i class="glyphicon glyphicon-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <a href="#">Login</a>
+      </li>
+      <li>
+        <a href="#">Create an Account</a>
+      </li>
+    </ul>
+  </div>
 </nav>

@@ -1,25 +1,25 @@
 <div>
-    <header></header>
-
-    <div class="col-sm-6 col-md-6"> 
-        
-        <ul class="list">
-            <li ng-repeat="movienames in showList" class="listitem">
-                <h2><a ng-href="#/{{movienames.show.id}}">{{movienames.show.name}}</a></h2>
-                <div class="media-left media-top"> <img ng-src="{{movienames.show.image.medium}}">
-                </div>
-                <div class="media-body">
-                    <div>ID:{{movienames.show.id}}</div>
-                    <div>Language: {{movienames.show.language}}
-                    </div>
-                    <div>Premiered: {{movienames.show.premiered}}</div>
-                    <div>Genres:
-                        <span ng-repeat="genre in movienames.show.genres"> {{genre}}</span>
-                    </div>
-                    <div>Status: {{movienames.show.status}}</div>
-                </div>
-            </li>
-        </ul>
-
-    </div>
+  <header></header>
+  <div class="col-sm-6 col-md-6"> 
+    <ul class="list">
+      <li ng-repeat="movienames in showList" class="listitem">
+        <h2>
+          <a ng-href="#/{{movienames.show.id}}">{{movienames.show.name}}</a>
+        </h2>
+        <div class="media-left media-top">
+         <img ng-src="{{movienames.show.image.medium}}" />
+        </div>
+        <div class="media-body">
+          <div>ID:{{movienames.show.id}}</div>
+          <div>Language: {{movienames.show.language}}
+          </div>
+          <div>Premiered: {{movienames.show.premiered}}</div>
+          <div>Genres:
+            <span ng-repeat="genre in movienames.show.genres"> {{genre}}</span>
+          </div>
+          <div>Status: {{movienames.show.status}}</div>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
