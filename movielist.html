@@ -1,5 +1,6 @@
 <div>
   <header></header>
+  <center><div ng-hide="errorMessage" style="color:red"><h2>No Result Found!!!</h2></div></center>
   <div class="col-sm-6 col-md-6"> 
     <ul class="list">
       <li ng-repeat="movienames in showList" class="listitem">
@@ -8,18 +9,18 @@
         </h2>
         <div class="media-left media-top">
          <img ng-src="{{movienames.show.image.medium}}" />
+       </div>
+       <div class="media-body">
+        <div>ID:{{movienames.show.id}}</div>
+        <div>Language: {{movienames.show.language}}
         </div>
-        <div class="media-body">
-          <div>ID:{{movienames.show.id}}</div>
-          <div>Language: {{movienames.show.language}}
-          </div>
-          <div>Premiered: {{movienames.show.premiered}}</div>
-          <div>Genres:
-            <span ng-repeat="genre in movienames.show.genres"> {{genre}}</span>
-          </div>
-          <div>Status: {{movienames.show.status}}</div>
+        <div>Premiered: {{movienames.show.premiered}}</div>
+        <div>Genres:
+          <span ng-repeat="genre in movienames.show.genres"> {{genre}}</span>
         </div>
-      </li>
-    </ul>
-  </div>
+        <div>Status: {{movienames.show.status}}</div>
+      </div>
+    </li>
+  </ul>
+</div>
 </div>

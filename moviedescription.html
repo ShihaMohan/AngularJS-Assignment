@@ -1,5 +1,5 @@
 <div>
-  <header></header>
+   <header></header>
   <div class="col-sm-8 col-md-8" id="container">
     <div>
       <h2>{{showMovie.name}}</h2>
@@ -33,7 +33,7 @@
           <li ng-class="{ active: isSet(1) }">
             <a ng-click="setTab(1)">Description</a>
           </li>
-          <li ng-class="{ active: Set(2) }">
+          <li ng-class="{ active: isSet(2) }">
             <a ng-click="setTab(2)">Episodes</a>
           </li>
           <li ng-class="{ active: isSet(3) }">
@@ -55,7 +55,7 @@
           <h4>Episodes</h4>
           <ul>
             <li ng-repeat="episodes in showEpisode">
-              <a href="#">{{episodes.url}}</a>
+              <a href="{{episodes.url}}" target="_blank">{{episodes.url}}</a>
             </li>
           </ul>
         </div>
@@ -63,7 +63,7 @@
           <h4>Seasons</h4>
           <ul>
             <li ng-repeat="seasons in showSeason">
-              <a href="#">{{seasons.url}}</a>
+              <a href="{{seasons.url}}" target="_blank">{{seasons.url}}</a>
             </li>
           </ul>
         </div>
@@ -83,5 +83,5 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>  
 </div>

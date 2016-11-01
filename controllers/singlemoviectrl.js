@@ -5,14 +5,10 @@ myApp.controller('singleMovieController', ['$scope', '$http', '$routeParams', '$
 
     singleMovieService.singleMovieCall(singlemovieid)
     .then(function(data) {
-      $scope.showList = data;
-
+      $scope.showMovie = data;
       $scope.sanitizeHtml = function(htmlContent) {
         return $sce.trustAsHtml(htmlContent);
       }
-      
-      $scope.showMovie = data;
-
       $scope.time = "Not available";
       if (data.schedule.time !== "") {
         $scope.time = data.schedule.time;
@@ -22,7 +18,7 @@ myApp.controller('singleMovieController', ['$scope', '$http', '$routeParams', '$
         $scope.days = data.schedule.days;
       }
     });
-
+   
     singleMovieService.episodeCall(singlemovieid)
     .then(function(data) {
       $scope.showEpisode = data;
@@ -45,4 +41,9 @@ myApp.controller('singleMovieController', ['$scope', '$http', '$routeParams', '$
     $scope.setTab = function(setTab) {
       $scope.tab = setTab;
     };
-  }]);
+
+    $scope.searchmovie = function(moviename) {
+     localStorage.searchmovie = moviename;
+     window.location.href="#/";
+   }
+ }]);

@@ -6,7 +6,6 @@ myApp.config(function($routeProvider) {
         })
         .when('/:movieid', {
             templateUrl: 'moviedescription.html',
-            controller: 'singleMovieController'
-        });
-     
+             controller: 'singleMovieController'              
+        });    
 });

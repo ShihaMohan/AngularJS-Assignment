@@ -4,6 +4,5 @@ myApp.directive("header", function() {
 		templateUrl: 'navbar.html',
 		scope: true,
 		transclude: false,
-	};
+	}; 
 });
-
